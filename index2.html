@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>FlatsWire API by FlatsWire</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>FlatsWire API</h1>
+        <h2>API</h2>
+        <a href="https://github.com/FlatsWire/api" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+			<h2><a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to FlatsWire API.</h2>
+	
+			<p>This FlatsWire API allow you to connect to us from your own system.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<h3><a name="how-to-connect" class="anchor" href="#how-to-connect"><span class="octicon octicon-link"></span></a>Connection to FlatsWire.</h3>
+
+			<p>All API resources available are with this pattern:</p>
+
+			<pre><code>http://&lt;host&gt;/rest/&lt;domain&gt;/&lt;function&gt;/&lt;ID?&gt;?key=&lt;Your Key&gt;</code></pre>
+
+			<p>
+				<ul>
+					<li><code>host</code> is the host to connect to. It will be given to you once your account will be created.</li>
+					<li><code>domain</code> is the domain of the function you want to call.<br/>There is actually 3 differents domains:
+						<ol style="margin-left:40px;">
+							<li><code>flat</code> which is related on all properties management;</li>
+							<li><code>booking</code> which is related on all booking management;</li>
+							<li><code>util</code> which is related on all function to help to know about Beethoven;</li>
+						</ol>
+					</li>
+					<li><code>id</code> is an optional ID. It depends on the function called.</li>
+					<li><code>key</code> is your API key. It's required to authenticate you as a user of the API.</li>
+				</ul>
+			</p>
+
+			<p>To obtain your key, you need to have an account registred on our system. Please contact <a href="javascript:;">sales@flatswire.com</a> to get more information about this.</p>
+
+			<h3><a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<h3><a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+			<p>Having trouble with the API? Check out the documentation at <a href="javascript:;">http://flatswire.github.com</a> or contact <a href="mailto:support@flatswire.com">support@flatswire.com</a> and we’ll help you sort it out.</p>
+
+			<h2>API Domains</h2>
+
+			<h3><a name="api-flat" class="anchor" href="#api-flat"><span class="octicon octicon-link"></span></a>Flat</h3>
+
+			<p>This part is related to apartment functions.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<h4><a name="api-flat-get" class="anchor" href="#api-flat-get"><span class="octicon octicon-link"></span></a>get</h4>
+
+			<p>This function will return you an exhaustive description of an apartment in our system.
+			Some details on some sub-objects you can find in the response:
+			<ul>
+				<li>Geo
+				<p>Represents a localisation on earth with lat/lon. You will have a tag which represents the internal codification and label which is the translated tag in human language.
+				The zoom indicates the best zoom to use in google map and category which is the category of the geo object. 
+				Fields <code>district</code>, <code>city</code>, <code>country</code>, <code>geo</code> are in this type.</p></li>
+
+				<li>Properties
+				<p>Are the amenities of the apartment.
+				The field <code>property_type_id</code> is the kind of amenity:<ul>
+					<li><code>3</code> means text value, like area which is the area of the apartment</li>
+					<li><code>2</code> means boolean value, like <code>flat_lift</code> which tells whether the apartment has a lift or not</li>
+				</ul>
+				The key field is the internal codification of the amenities. It's a language free representation. But all written in english so most of them are self-explained.</p></li>
+			</ul>
+			</p>
+
+			<p>Example:</p>
+
+			<pre><code>http://&lt;host&gt;/rest/flat/get/595?key=&lt;your_key&gt;</code></pre>
+
+			<p>Result:</p>
+			<pre><code>
+{
+flat_id: "595",
+min_stay: "3",
+max_stay: "95",
+nb_person: "6",
+nb_sleep: "3",
+nb_dbed: "2",
+nb_sbed: "0",
+nb_sofabed: "1",
+nb_bedroom: "2",
+nb_bathroom: "1",
+nb_toilette: "1",
+floor: "7",
+photo_count: "60",
+customer_deal: "1",
+nb_room: "4",
+reference: "A-VIEW99",
+creation_date: "2011-03-18 11:24:13",
+modification_date: "2012-12-11 09:39:44",
+deletion_date: null,
+deleted: "0",
+enabled: "1",
+shared: "1",
+district: {
+geo_id: "20",
+latitude: "48.867326",
+longitude: "2.364378",
+zoom: "12",
+tag: "republique",
+category: "district",
+parent_geo_id: "904",
+label: null
+},
+city: {
+geo_id: "904",
+latitude: "48.856614",
+longitude: "2.3522219",
+zoom: "14",
+tag: "fr.paris",
+category: "city",
+parent_geo_id: "903",
+label: "Paris"
+},
+country: {
+geo_id: "903",
+latitude: "46.227638",
+longitude: "2.213749",
+zoom: "12",
+tag: "fr",
+category: "country",
+parent_geo_id: "904",
+label: null
+},
+manager: {
+account_id: "41",
+reference: "PA-Location",
+creation_date: "2010-04-29 14:00:39",
+modification_date: "2013-05-14 08:14:24",
+description: null
+},
+address: {
+address_id: "577",
+unit: "",
+number: "99",
+street1: "Avenue de la RÃ©publique",
+street2: "",
+street3: "",
+zip_code: "75011",
+state: null,
+city: "Paris",
+country_id: "74",
+latitude: "48.8636296",
+longitude: "2.383233399",
+creation_date: null,
+modification_date: null,
+tag: null,
+formatted_address: null
+},
+currency: {
+currency_id: "45",
+code: "EUR",
+name: "Euro",
+symbol: "&euro;",
+unicode_symbol: "&#12"
+},
+geo: {
+geo_id: "720",
+latitude: "48.8636296",
+longitude: "2.383233399",
+zoom: "0",
+tag: "fr.par.a-view99",
+category: null,
+parent_geo_id: "904",
+label: null
+},
+properties: [
+{
+property_id: "1",
+value: "93",
+property_type_id: "3",
+key: "flat_area",
+category: "flat"
+},
+{
+property_id: "2",
+value: "1",
+property_type_id: "2",
+key: "flat_phone",
+category: "flat"
+},
+{
+property_id: "3",
+value: "1",
+property_type_id: "2",
+key: "flat_washingmachine",
+category: "flat"
+},
+{
+property_id: "4",
+value: "1",
+property_type_id: "2",
+key: "flat_lift",
+category: "flat"
+},
+{
+property_id: "5",
+value: "1",
+property_type_id: "2",
+key: "flat_tv",
+category: "flat"
+},
+{
+property_id: "6",
+value: "1",
+property_type_id: "2",
+key: "flat_cable",
+category: "flat"
+},
+{
+property_id: "7",
+value: "1",
+property_type_id: "2",
+key: "flat_internet",
+category: "flat"
+},
+{
+property_id: "8",
+value: "0",
+property_type_id: "2",
+key: "flat_dryer",
+category: "flat"
+},
+{
+property_id: "9",
+value: "1",
+property_type_id: "2",
+key: "flat_dishwasher",
+category: "flat"
+},
+{
+property_id: "10",
+value: "1",
+property_type_id: "2",
+key: "flat_oven",
+category: "flat"
+},
+{
+property_id: "11",
+value: "1",
+property_type_id: "2",
+key: "flat_microwave",
+category: "flat"
+},
+{
+property_id: "12",
+value: "1",
+property_type_id: "2",
+key: "flat_balcony",
+category: "flat"
+},
+{
+property_id: "13",
+value: "1",
+property_type_id: "2",
+key: "flat_terrasse",
+category: "flat"
+},
+{
+property_id: "14",
+value: "0",
+property_type_id: "2",
+key: "flat_sauna",
+category: "flat"
+},
+{
+property_id: "15",
+value: "0",
+property_type_id: "2",
+key: "flat_pool",
+category: "flat"
+},
+{
+property_id: "16",
+value: "0",
+property_type_id: "2",
+key: "flat_airconditioning",
+category: "flat"
+},
+{
+property_id: "17",
+value: "0",
+property_type_id: "2",
+key: "flat_carpark",
+category: "flat"
+},
+{
+property_id: "18",
+value: "0",
+property_type_id: "2",
+key: "flat_bathtub",
+category: "flat"
+},
+{
+property_id: "19",
+value: "0",
+property_type_id: "2",
+key: "flat_bathtub_shower_inc",
+category: "flat"
+},
+{
+property_id: "20",
+value: "0",
+property_type_id: "2",
+key: "flat_bathtub_shower",
+category: "flat"
+},
+{
+property_id: "21",
+value: "1",
+property_type_id: "2",
+key: "flat_shower_separated",
+category: "flat"
+},
+{
+property_id: "22",
+value: "0",
+property_type_id: "2",
+key: "flat_toilet_separated",
+category: "flat"
+},
+{
+property_id: "23",
+value: "1",
+property_type_id: "2",
+key: "flat_oven_mix",
+category: "flat"
+},
+{
+property_id: "24",
+value: "0",
+property_type_id: "2",
+key: "flat_disable_access",
+category: "flat"
+},
+{
+property_id: "25",
+value: "1",
+property_type_id: "2",
+key: "flat_street_view",
+category: "flat"
+},
+{
+property_id: "26",
+value: "1",
+property_type_id: "2",
+key: "flat_courtyard_view",
+category: "flat"
+},
+{
+property_id: "100",
+value: "1",
+property_type_id: "2",
+key: "flat_wifi",
+category: "flat"
+},
+{
+property_id: "135",
+value: "6a00d8341d39da53ef014e86ce42c9970d",
+property_type_id: "3",
+key: "flat_typepad_id",
+category: "flat"
+},
+{
+property_id: "153",
+value: "0",
+property_type_id: "2",
+key: "flat_us_ca_free_call",
+category: "flat"
+},
+{
+property_id: "154",
+value: "0",
+property_type_id: "2",
+key: "flat_au_nz_free_call",
+category: "flat"
+}
+]
+}
+</code></pre>
+
+
+			<h3><a name="api-booking" class="anchor" href="#api-booking"><span class="octicon octicon-link"></span></a>Booking</h3>
+
+			<h3><a name="api-util" class="anchor" href="#api-util"><span class="octicon octicon-link"></span></a>Util</h3>
+		</section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/FlatsWire/api/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/FlatsWire/api/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/FlatsWire/api"></a> is maintained by <a href="https://github.com/FlatsWire">FlatsWire</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>  
+  </body>
+</html>
+
+

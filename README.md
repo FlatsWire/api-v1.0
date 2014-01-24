@@ -72,7 +72,7 @@ Some details on some sub-objects you can find in the response:
 Example: 
 
 ```shell
-    http://bs.flatswire.com/rest/flat/get/595?key=<your_key>
+    http://<host>/rest/flat/get/595?key=<your_key>
 ```
 
 Result:
@@ -200,7 +200,7 @@ This function will return you the English text description of an apartment.
 Example:
 
 ```shell
-    http://bs.flatswire.com/rest/flat/description/595?key=<your_key>
+    http://<host>/rest/flat/description/595?key=<your_key>
 ```
 
 Result:
@@ -216,7 +216,7 @@ This function gives you all the URLs of all photos available for an apartment.
 Example:
 
 ```shell
-    http://bs.flatswire.com/rest/flat/photos/595?key=<your_key>
+    http://<host>/rest/flat/photos/595?key=<your_key>
 ```
 
 Result:
@@ -305,7 +305,7 @@ Status indicates more fine information why the apartment is not available. I'm n
 ##### Example #1
 
 ```shell
-    http://bs.flatswire.com/rest/flat/availability/595?key=<your_key>
+    http://<host>/rest/flat/availability/595?key=<your_key>
 ```
 
 Result:
@@ -343,7 +343,7 @@ Result:
 ##### Example #2: With a ts set to 01/09/2013
 
 ```javascript
-    http://bs.flatswire.com/rest/flat/availability/595?key=<your_key>&ts=1377993600
+    http://<host>/rest/flat/availability/595?key=<your_key>&ts=1377993600
 ```
 
 Result:
@@ -405,7 +405,7 @@ If you didn't manage to rename on our system apartments, reference will be the s
 Example:
 
 ```shell
-    http://bs.flatswire.com/rest/flat/references?key=<your_key>
+    http://<host>/rest/flat/references?key=<your_key>
 ```
 
 Result:
@@ -470,7 +470,7 @@ This array is the price you can get for each different stay duration. You will g
 Example:
 
 ```shell
-    http://bs.flatswire.com/rest/flat/prices/595?key=53ccd11e-df4d-4cef-98ec-84b474cb5121
+    http://<host>/rest/flat/prices/595?key=53ccd11e-df4d-4cef-98ec-84b474cb5121
 ```
 
 Result:

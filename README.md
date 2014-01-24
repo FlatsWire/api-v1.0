@@ -1,6 +1,4 @@
-*************
-FlatsWire API
-*************
+# FlatsWire API
 
 This FlatsWire API allow you to connect to us from your own system.
 

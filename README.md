@@ -470,7 +470,7 @@ This array is the price you can get for each different stay duration. You will g
 Example:
 
 ```shell
-    http://<host>/rest/flat/prices/595?key=53ccd11e-df4d-4cef-98ec-84b474cb5121
+    http://<host>/rest/flat/prices/595?key=<your_key>
 ```
 
 Result:

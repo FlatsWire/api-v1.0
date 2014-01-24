@@ -28,8 +28,8 @@ This FlatsWire API allow you to connect to us from your own system.
 
 All API resources available are with this pattern:
 
-```shell
-    http://<host>/rest/<domain>/<function>/<ID?>?key=<your_key>
+```html
+    http://<host>/rest/<domain>/<function>/<ID>?key=<your_key>
 ```
 
 * `host` is the host to connect to. It will be given to you once your account will be created.
@@ -71,7 +71,7 @@ Some details on some sub-objects you can find in the response:
 
 Example: 
 
-```shell
+```html
     http://<host>/rest/flat/get/595?key=<your_key>
 ```
 
@@ -199,7 +199,7 @@ This function will return you the English text description of an apartment.
 
 Example:
 
-```shell
+```html
     http://<host>/rest/flat/description/595?key=<your_key>
 ```
 
@@ -215,7 +215,7 @@ This function gives you all the URLs of all photos available for an apartment.
 
 Example:
 
-```shell
+```html
     http://<host>/rest/flat/photos/595?key=<your_key>
 ```
 
@@ -304,7 +304,7 @@ Status indicates more fine information why the apartment is not available. I'm n
 
 ##### Example #1
 
-```shell
+```html
     http://<host>/rest/flat/availability/595?key=<your_key>
 ```
 
@@ -342,7 +342,7 @@ Result:
 
 ##### Example #2: With a ts set to 01/09/2013
 
-```javascript
+```html
     http://<host>/rest/flat/availability/595?key=<your_key>&ts=1377993600
 ```
 
@@ -404,7 +404,7 @@ If you didn't manage to rename on our system apartments, reference will be the s
 
 Example:
 
-```shell
+```html
     http://<host>/rest/flat/references?key=<your_key>
 ```
 
@@ -469,7 +469,7 @@ This array is the price you can get for each different stay duration. You will g
 
 Example:
 
-```shell
+```html
     http://<host>/rest/flat/prices/595?key=<your_key>
 ```
 

@@ -29,7 +29,7 @@ This FlatsWire API allow you to connect to us from your own system.
 All API resources available are with this pattern:
 
 ```html
-    http://<host>/rest/<domain>/<function>/<ID>?key=<your_key>
+    http://<host>/rest/<domain>/<function>/<id>?key=<your_key>
 ```
 
 * `host` is the host to connect to. It will be given to you once your account will be created.

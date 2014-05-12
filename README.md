@@ -588,9 +588,11 @@ Result:
 
 To get the final price, you must implement the following calculations:
 
+```shell
             (Dtot - Dci)          
 P = SUM  ----------------- x Pci
                 Dtot 
+```
 
 Where: 
 - Dtot is the total duration of your stay
@@ -627,14 +629,17 @@ B) If your booking is from the 28/08/2014 to the 04/09/2014. This one spread ove
 It will spend 3 days at rate 1 and 4 days at rate 1.1. The duration is 7 days, so at 7 days price for rate 1 is 1304 EUR and price for rate 1.1 is 1409 EUR.
 So the calculation will be in this case:
 
+```shell
 P = ((7 - 3) / 7) x 1304 + ((7 - 4) / 7) x 1409 = 746 + 604 = 1350 EUR
-
+```
 Notes:
 
 - You must all the time round to next closest integer value. In PHP is the ceil() function.
 - If the total duration is not in the duration vector (ie: 6 days) you must interpolate the price before applying the calculation:
 
+```shell
 	y = (((xb - x) / (xb - xa)) x ya) + (((x - xa) / (xb -xa)) x yb
+```
 
 a et b will be the closest durations of your total duration.
 
@@ -656,8 +661,9 @@ Example for 6 days booking: the duration before 6 is 5 days and after is 7 days:
 
 To make it simple le's say we search the price for a rate 1, so the result is:
 
+```shell
 	y = (((7 - 6) / (7 - 5)) x 1116) + (((6 - 5) / (7 - 5)) x 1303) = 558 + 652 = 1210 EUR
-
+```
 
 At the moment the function returns only net prices (without PBN margin). I'm thinking to add an optional parameter called retail which is a boolean.
 If at 1, the function returns retail (with your margin) prices else the net prices.

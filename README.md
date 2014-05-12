@@ -665,9 +665,6 @@ To make it simple le's say we search the price for a rate 1, so the result is:
 	y = (((7 - 6) / (7 - 5)) x 1116) + (((6 - 5) / (7 - 5)) x 1303) = 558 + 652 = 1210 EUR
 ```
 
-At the moment the function returns only net prices (without PBN margin). I'm thinking to add an optional parameter called retail which is a boolean.
-If at 1, the function returns retail (with your margin) prices else the net prices.
-
 
 ### Booking
 

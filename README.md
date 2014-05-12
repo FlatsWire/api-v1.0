@@ -457,7 +457,7 @@ The result is composed of two sections:
 * `season weights`
 * `prices`
 
-All prices are in the currency fixed with the apartment.
+All prices are in the apartment currency.
 
 * The season weights array
 
@@ -465,7 +465,8 @@ This array is composed of period with a rate. This indicates the rate applied to
 
 * The prices
 
-This array is the price you can get for each different stay duration. You will get the lower price and higher price possible for this duration and the 'flat' price (with no season weight applied).
+This array is the price you can get for each different stay duration by all the season weights.
+
 
 Example:
 
@@ -477,113 +478,190 @@ Result:
 
 ```javascript
 {
-    season_weights: [
-        {
-            start_date: "1/1/2013",
-            end_date: "4/1/2013",
-            rate: "1.15"
-        },
-        {
-            start_date: "5/1/2013",
-            end_date: "15/3/2013",
-            rate: "0.85"
-        },
-        {
-            start_date: "16/3/2013",
-            end_date: "18/7/2013",
-            rate: "1.1"
-        },
-        {
-            start_date: "19/7/2013",
-            end_date: "31/8/2013",
-            rate: "1"
-        },
-        {
-            start_date: "1/9/2013",
-            end_date: "20/10/2013",
-            rate: "1.1"
-        },
-        {
-            start_date: "21/10/2013",
-            end_date: "18/12/2013",
-            rate: "0.85"
-        },
-        {
-            start_date: "19/12/2013",
-            end_date: "31/12/2013",
-            rate: "1.15"
-        }
-    ],
-    prices: [
-        {
-            duration: "1",
-            lower_price: 412,
-            price: 436,
-            higher_price: 462
-        },
-        {
-            duration: "3",
-            lower_price: 701,
-            price: 776,
-            higher_price: 853
-        },
-        {
-            duration: "5",
-            lower_price: 989,
-            price: 1116,
-            higher_price: 1244
-        },
-        {
-            duration: "7",
-            lower_price: 1148,
-            price: 1303,
-            higher_price: 1459
-        },
-        {
-            duration: "14",
-            lower_price: 2104,
-            price: 2427,
-            higher_price: 2752
-        },
-        {
-            duration: "21",
-            lower_price: 2603,
-            price: 3014,
-            higher_price: 3426
-        },
-        {
-            duration: "30",
-            lower_price: 3011,
-            price: 3496,
-            higher_price: 3981
-        },
-        {
-            duration: "60",
-            lower_price: 5391,
-            price: 6295,
-            higher_price: 7201
-        },
-        {
-            duration: "90",
-            lower_price: 7824,
-            price: 9158,
-            higher_price: 10492
-        },
-        {
-            duration: "180",
-            lower_price: 15383,
-            price: 18050,
-            higher_price: 20718
-        },
-        {
-            duration: "360",
-            lower_price: 30499,
-            price: 35834,
-            higher_price: 41170
-        }
-    ]
+	season_weights: [
+	{
+		start_date: "01/01/2014",
+		end_date: "04/01/2014",
+		rate: "1.15"
+	},
+	{
+		start_date: "05/01/2014",
+		end_date: "15/03/2014",
+		rate: "0.85"
+	},
+	{
+		start_date: "16/03/2014",
+		end_date: "18/07/2014",
+		rate: "1.1"
+	},
+	{
+		start_date: "19/07/2014",
+		end_date: "31/08/2014",
+		rate: "1"
+	},
+	{
+		start_date: "01/09/2014",
+		end_date: "20/10/2014",
+		rate: "1.1"
+	},
+	{
+		start_date: "21/10/2014",
+		end_date: "18/12/2014",
+		rate: "0.85"
+	},
+	{
+		start_date: "19/12/2014",
+		end_date: "31/12/2014",
+		rate: "1.15"
+	}
+	],
+	prices: {
+		1: {
+			1: 43700,
+			1.15: 46300,
+			0.85: 41200,
+			1.1: 45400
+		},
+		3: {
+			1: 77800,
+			1.15: 85300,
+			0.85: 70100,
+			1.1: 82800
+		},
+		5: {
+			1: 111600,
+			1.15: 124500,
+			0.85: 98900,
+			1.1: 120100
+		},
+		7: {
+			1: 130400,
+			1.15: 146000,
+			0.85: 114800,
+			1.1: 140900
+		},
+		14: {
+			1: 242800,
+			1.15: 275300,
+			0.85: 210400,
+			1.1: 264500
+		},
+		21: {
+			1: 301600,
+			1.15: 342700,
+			0.85: 260300,
+			1.1: 329000
+		},
+		30: {
+			1: 349700,
+			1.15: 398100,
+			0.85: 301200,
+			1.1: 382000
+		},
+		60: {
+			1: 629700,
+			1.15: 720100,
+			0.85: 539200,
+			1.1: 690000
+		},
+		90: {
+			1: 915900,
+			1.15: 1049200,
+			0.85: 782500,
+			1.1: 1004900
+		},
+		180: {
+			1: 1805100,
+			1.15: 2071800,
+			0.85: 1538300,
+			1.1: 1983000
+		},
+		360: {
+			1: 3583500,
+			1.15: 4117000,
+			0.85: 3050000,
+			1.1: 3939300
+		}
+	}
 }
 ```
+
+To get the final price, you must implement the following calculations:
+
+            (Dtot - Dci)          
+P = SUM  ----------------- x Pci
+                Dtot 
+
+Where: 
+- Dtot is the total duration of your stay
+- Dci is the number of days spend in a season weight period
+- Pci is the price of the ci season weight period
+
+Here some examples:
+
+A) If your booking is from the 20/07/2014 to the 25/07/2014, it spread only over one season weight: 
+```javascript
+{
+   start_date: "19/07/2014",
+   end_date: "31/08/2014",
+   rate: "1"
+},
+```
+
+With a rate at 1. The duration is 5 days so the price for 5 days at rate 1 is 1116 EUR. This is the price of your stay is 1116 EUR. This one is the easiest case.
+
+B) If your booking is from the 28/08/2014 to the 04/09/2014. This one spread over two season weights:
+```javascript
+{
+   start_date: "19/07/2014",
+   end_date: "31/08/2014",
+   rate: "1"
+},
+{
+   start_date: "01/09/2014",
+   end_date: "20/10/2014",
+   rate: "1.1"
+},
+```
+
+It will spend 3 days at rate 1 and 4 days at rate 1.1. The duration is 7 days, so at 7 days price for rate 1 is 1304 EUR and price for rate 1.1 is 1409 EUR.
+So the calculation will be in this case:
+
+P = ((7 - 3) / 7) x 1304 + ((7 - 4) / 7) x 1409 = 746 + 604 = 1350 EUR
+
+Notes:
+
+- You must all the time round to next closest integer value. In PHP is the ceil() function.
+- If the total duration is not in the duration vector (ie: 6 days) you must interpolate the price before applying the calculation:
+
+	y = (((xb - x) / (xb - xa)) x ya) + (((x - xa) / (xb -xa)) x yb
+
+a et b will be the closest durations of your total duration.
+
+Example for 6 days booking: the duration before 6 is 5 days and after is 7 days:
+```javascript
+5: {
+   1: 111600,
+   1.15: 124500,
+   0.85: 98900,
+   1.1: 120100
+},
+7: {
+   1: 130400,
+   1.15: 146000,
+   0.85: 114800,
+   1.1: 140900
+},
+```
+
+To make it simple le's say we search the price for a rate 1, so the result is:
+
+	y = (((7 - 6) / (7 - 5)) x 1116) + (((6 - 5) / (7 - 5)) x 1303) = 558 + 652 = 1210 EUR
+
+
+At the moment the function returns only net prices (without PBN margin). I'm thinking to add an optional parameter called retail which is a boolean.
+If at 1, the function returns retail (with your margin) prices else the net prices.
+
 
 ### Booking
 

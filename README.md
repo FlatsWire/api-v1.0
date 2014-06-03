@@ -749,7 +749,7 @@ Result:
     }
 ```
 
-#### Booking Get
+#### Booking Push
 
 This function will create a booking in FlatsWire.
 
@@ -778,7 +778,81 @@ Example:
 Result:
 
 ```javascript
-
+    {
+       "booking_id": 102030,
+       "reference": "VUDZRZZZ",
+       "status": 3,
+       "checkin_date": "2014-05-01",
+       "checkout_date": "2014-05-10",
+       "creation_date": "2014-06-03 15:40:55",
+       "modification_date": "2014-06-03 15:40:55",
+       "adults": 2,
+       "children": 0,
+       "comments": "",
+       "user_id": "478",
+       "duration": "9",
+       "customer":
+       {
+           "customer_id": 52548,
+           "first_name": "John",
+           "mid_name": null,
+           "last_name": "Doe",
+           "email": "john.doe@somewhere.net",
+           "address_id": null,
+           "account_id": "36",
+           "creation_date": "2014-06-03 15:40:55",
+           "modification_date": "2014-06-03 15:40:55",
+           "uuid": null
+       },
+       "selected_item":
+       {
+           "total_price": 211200,
+           "partner_price": 211200,
+           "partner_margin": 20,
+           "partner_split": "30",
+           "partner_service": 0,
+           "customer_service": 0,
+           "item":
+           {
+               "flat_id": "595",
+               "customer_deal": "1",
+               "min_stay": "3",
+               "max_stay": "95",
+               "nb_room": "4",
+               "nb_person": "6",
+               "nb_sleep": "3",
+               "nb_dbed": "2",
+               "nb_sbed": "0",
+               "nb_sofabed": "1",
+               "nb_bedroom": "2",
+               "nb_bathroom": "1",
+               "nb_toilette": "1",
+               "floor": "7",
+               "photo_count": "60",
+               "enabled": "1",
+               "reference": "A-VIEW99",
+               "creation_date": "2011-03-18 11:24:13",
+               "modification_date": "2014-06-02 17:20:43",
+               "currency":
+               {
+                   "currency_id": "45",
+                   "code": "EUR",
+                   "name": "Euro",
+                   "symbol": "€",
+                   "unicode_symbol": ""
+               },
+               "partner_reference": "REPUB06"
+           }
+       },
+       "account":
+       {
+           "account_id": "36",
+           "reference": "parisbynumbers",
+           "creation_date": "2010-04-29 14:00:39",
+           "modification_date": "2013-06-05 08:35:34",
+           "description": null
+       }
+    }
 ```
 
 ### Util

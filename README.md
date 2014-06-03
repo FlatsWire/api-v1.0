@@ -668,10 +668,85 @@ To make it simple le's say we search the price for a rate 1, so the result is:
 
 ### Booking
 
-```
-    Not yet avaialble
+#### Get
+
+This function will return a booking from its ID.
+
+Example:
+
+```html
+    http://<host>/rest/booking/get/101992?key=<your_key>
 ```
 
+Result:
+
+```javascript
+
+
+    {
+       "booking_id": "101992",
+       "reference": "EWASATHR",
+       "status": "3",
+       "checkin_date": "2014-05-01",
+       "checkout_date": "2014-05-10",
+       "creation_date": "2014-06-03 11:59:16",
+       "modification_date": "2014-06-03 11:59:16",
+       "adults": "2",
+       "children": "0",
+       "comments": "",
+       "user_id": "478",
+       "duration": "9",
+       "sleeps": "0",
+       "infants": "0",
+       "customer":
+       {
+           "customer_id": "52510",
+           "first_name": "John",
+           "mid_name": null,
+           "last_name": "Doe",
+           "email": "john.doe@somewhere.net",
+           "password": "zr!pjA+b",
+           "address_id": null,
+           "account_id": "36",
+           "creation_date": "2014-06-03 11:59:16",
+           "modification_date": "2014-06-03 11:59:16",
+           "uuid": null
+       },
+       "properties": false,
+       "selected_item":
+       {
+           "total_price": "211200",
+           "partner_price": "211200",
+           "partner_margin": "20",
+           "partner_split": "30",
+           "partner_service": "0",
+           "customer_service": "0",
+           "item":
+           {
+               "flat_id": "595",
+               "customer_deal": "1",
+               "min_stay": "3",
+               "max_stay": "95",
+               "nb_room": "4",
+               "nb_person": "6",
+               "nb_sleep": "3",
+               "nb_dbed": "2",
+               "nb_sbed": "0",
+               "nb_sofabed": "1",
+               "nb_bedroom": "2",
+               "nb_bathroom": "1",
+               "nb_toilette": "1",
+               "floor": "7",
+               "photo_count": "60",
+               "enabled": "1",
+               "reference": "A-VIEW99",
+               "creation_date": "2011-03-18 11:24:13",
+               "modification_date": "2014-06-02 17:20:43",
+               "partner_reference": "REPUB06"
+           }
+       }
+    }
+```
 ### Util
 
 ```

@@ -748,6 +748,39 @@ Result:
        }
     }
 ```
+
+#### Booking Get
+
+This function will create a booking in FlatsWire.
+
+It is required to post this fields:
+* `checkin`, The arrival date in YYYY-mm-dd format (i.e.: 2014-05-12).
+* `checkout`, The departure date in YYYY-mm-dd format (i.e.: 2014-05-12).
+* `selection`, The selected properties ID# list. It's a comma separated values list (i.e.: '595,13').
+* `first_name`, The first name of the customer.
+* `last_name`, The last name of the customer.
+* `email`, The emails of the customer.
+* `nb_adult`, The number of adult for this booking.
+
+This fields are optionnel:
+* `nb_children`, The number of children for this booking.
+* `comments`, The customer comments.
+
+If the post succeed, you will get back the booking if all the information. Else an error message will tell you what is wrong.
+
+
+Example:
+
+```html
+    http://<host>/rest/booking/push?key=<your_key>
+```
+
+Result:
+
+```javascript
+
+```
+
 ### Util
 
 ```

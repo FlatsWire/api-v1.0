@@ -18,6 +18,7 @@ This FlatsWire API allow you to connect to us from your own system.
             * [Flat References](#flat-references)
             * [Flat Prices](#flat-prices)
         * [Booking](#booking)
+            * [Booking Get](#booking-get)	
         * [Util](#utils)
 
 
@@ -668,7 +669,7 @@ To make it simple le's say we search the price for a rate 1, so the result is:
 
 ### Booking
 
-#### Get
+#### Booking Get
 
 This function will return a booking from its ID.
 

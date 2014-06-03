@@ -705,7 +705,6 @@ Result:
            "mid_name": null,
            "last_name": "Doe",
            "email": "john.doe@somewhere.net",
-           "password": "zr!pjA+b",
            "address_id": null,
            "account_id": "36",
            "creation_date": "2014-06-03 11:59:16",

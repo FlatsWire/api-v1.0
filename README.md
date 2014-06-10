@@ -20,7 +20,7 @@ This FlatsWire API allow you to connect to us from your own system.
         * [Booking](#booking)
             * [Booking Get](#booking-get)
             * [Booking Push](#booking-push)
-	    * [Booking Update Status](#booking-update-status)
+            * [Booking Update Status](#booking-update-status)
         * [Util](#utils)
 
 

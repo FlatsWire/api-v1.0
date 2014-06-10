@@ -20,6 +20,7 @@ This FlatsWire API allow you to connect to us from your own system.
         * [Booking](#booking)
             * [Booking Get](#booking-get)
             * [Booking Push](#booking-push)
+	    * [Booking Update Status](#booking-update-status)
         * [Util](#utils)
 
 
@@ -853,6 +854,43 @@ Result:
            "description": null
        }
     }
+```
+
+#### Booking Push
+
+This function will update the status of a booking in FlatsWire.
+Two parameters are required in the URL:
+* `booking_id`, The ID of the booking to update.
+* `new_status`, The new status value to apply to this booking.
+
+The status can be one value between these:
+1 - Request
+2 - Pending
+3 - Option
+4 - Hold
+5 - Confirmed
+6 - Firm
+7 - Closed
+8 - Cancelled
+9 - Refused 
+10 - Lock
+
+According to the new status you try to apply, you may not authorized to do it.
+Here the rules:
+- An agency cannot update a status greater than 5 - Confirmed
+- A manager cannot update a status lower than 3 - Option
+- You can't update a booking with the same status
+
+Example:
+
+```html
+    http://<host>/rest/booking/update_status/<booking_id>/<new_status>?key=<your_key>
+```
+
+Result:
+
+```javascript
+  The same result as the get booking function
 ```
 
 ### Util

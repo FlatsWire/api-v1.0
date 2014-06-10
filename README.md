@@ -889,8 +889,31 @@ Example:
 
 Result:
 
+  The result is the same as the get booking function, with the new status value as status.
+
 ```javascript
-  The same result as the get booking function
+    {
+       "booking_id": 102030,
+       "reference": "VUDZRZZZ",
+       "status": 3,
+       "checkin_date": "2014-05-01",
+       "checkout_date": "2014-05-10",
+       "creation_date": "2014-06-03 15:40:55",
+       "modification_date": "2014-06-03 15:40:55",
+       "adults": 2,
+       "children": 0,
+       "comments": "",
+       ...
+       "account":
+       {
+           "account_id": "36",
+           "reference": "parisbynumbers",
+           "creation_date": "2010-04-29 14:00:39",
+           "modification_date": "2013-06-05 08:35:34",
+           "description": null
+       }
+    }
+
 ```
 
 ### Util

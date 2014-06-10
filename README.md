@@ -856,7 +856,7 @@ Result:
     }
 ```
 
-#### Booking Push
+#### Booking Update Status
 
 This function will update the status of a booking in FlatsWire.
 Two parameters are required in the URL:
@@ -864,16 +864,16 @@ Two parameters are required in the URL:
 * `new_status`, The new status value to apply to this booking.
 
 The status can be one value between these:
-1 - Request
-2 - Pending
-3 - Option
-4 - Hold
-5 - Confirmed
-6 - Firm
-7 - Closed
-8 - Cancelled
-9 - Refused 
-10 - Lock
+* 1 - Request
+* 2 - Pending
+* 3 - Option
+* 4 - Hold
+* 5 - Confirmed
+* 6 - Firm
+* 7 - Closed
+* 8 - Cancelled
+* 9 - Refused 
+* 10 - Lock
 
 According to the new status you try to apply, you may not authorized to do it.
 Here the rules:

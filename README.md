@@ -17,6 +17,7 @@ This FlatsWire API allow you to connect to us from your own system.
             * [Flat Availability](#flat-availability)
             * [Flat References](#flat-references)
             * [Flat Prices](#flat-prices)
+            * [Flat Check](#flat-check)
         * [Booking](#booking)
             * [Booking Get](#booking-get)
             * [Booking Push](#booking-push)
@@ -668,6 +669,32 @@ To make it simple le's say we search the price for a rate 1, so the result is:
 	y = (((7 - 6) / (7 - 5)) x 1116) + (((6 - 5) / (7 - 5)) x 1303) = 558 + 652 = 1210 EUR
 ```
 
+#### Flat Check
+
+This function checks the price and the availability of the apartment between two dates.
+
+Required parameters:
+* start_date, The start date of your period to check, in YYYY-mm-dd format (i.e. 2014-08-01)
+* end_date, The end date of you period to check, in YYYY-mm-dd format (i.e. 2014-08-01)
+
+The method returns the price in cents in the apartment currency and the availability.
+The availability field is a boolean where true means the apartment is available for booking between your dates, false means is not available.
+
+Example:
+
+```html
+    http://<host>/rest/flat/check/595?key=<your_key>&start_date=2014-08-01&end_date=2014-08-07
+```
+
+Result:
+
+```javascript
+{
+  price: 121000,
+  available: false,
+  currency: "EUR"
+}
+```
 
 ### Booking
 

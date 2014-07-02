@@ -295,16 +295,23 @@ Result:
 
 #### Flat Availability
 
-This function will return all the blocking periods for the apartment. It accepts a parameter called `ts`, which is not mandatory. By default it equals to date of the day.
+This function will return all the blocking periods for the apartment.
+It accepts the following parameters:
+- `ts`, which is not mandatory. By default it equals to date of the day.
 This parameter allow you to start from another time. It's a UNIX timestamp, the elapsed sec from Epoc.
+- `id`, which is mandatory if you don't provide any id in the URL. It's a comma separated list of ID.
 
-The result is composed of an array of periods which are not available for the apartment.
+The result is composed of an array of periods which are not available for the apartment or an array of array if you provided a list of ids.
 If a period started before the `ts`parameter and finished at the day of the request or later, you will get it.
 Status indicates more fine information why the apartment is not available. I'm not sure you need this now, but here the list of statuses you are able to get in case of:
 * 4, means apartment in hold. 
 * 5, means apartment booking for the given period has been confirmed.
 * 6, means apartment has been fully booked.
 * 10, means the apartment is not available at all. Could be due to the owner, to heavy works, etc.
+
+When you provide a list of IDs you mustn't set the ID in the URL. The result is an array of array keyed by the flat ID.
+If a flat has been de-activated or deleted, the response won't have it.
+If you are not authorized to use this apartment, the request failed with the appropriate error message and related flat ID.
 
 ##### Example #1
 
@@ -397,6 +404,54 @@ Result:
 ]
 ```
 
+##### Example #3
+
+With a list of IDs.
+
+```html
+    http://<host>/rest/flat/availability?key=<your_key>&id=595,320,821
+```
+
+Result:
+
+```javascript
+{
+    "595": [
+        {
+            "status": "10",
+            "checkin_date": "2014-06-27",
+            "checkout_date": "2014-07-03"
+        },
+        {
+            "status": "10",
+            "checkin_date": "2014-07-04",
+            "checkout_date": "2014-12-31"
+        },
+        {
+            "status": "5",
+            "checkin_date": "2016-06-16",
+            "checkout_date": "2016-06-21"
+        }
+    ],
+    "821": [
+        {
+            "status": "10",
+            "checkin_date": "2014-07-01",
+            "checkout_date": "2014-07-12"
+        },
+        {
+            "status": "10",
+            "checkin_date": "2014-07-13",
+            "checkout_date": "2014-07-30"
+        },
+        {
+            "status": "6",
+            "checkin_date": "2014-08-01",
+            "checkout_date": "2015-07-31"
+        }
+    ]
+}
+```
 #### Flat References
 
 This function will return the full active list of apartments available for your account. The result is an array composed of:
@@ -793,6 +848,7 @@ It is required to post this fields:
 This fields are optionnel:
 * `nb_children`, The number of children for this booking.
 * `comments`, The customer comments.
+* `status`, The status to set immediately for this booking. You are allowed to set a status between REQUEST (1) and CONFIRMED (5). If the requested status cannot be satisfied, you will get back an error message with the booking ID and booking reference. This is because the booking will be created anyway but it will stay in REQUEST (1) status.
 
 If the post succeed, you will get back the booking if all the information. Else an error message will tell you what is wrong.
 

@@ -303,7 +303,8 @@ This parameter allow you to start from another time. It's a UNIX timestamp, the 
 
 The result is composed of an array of periods which are not available for the apartment or an array of array if you provided a list of ids.
 If a period started before the `ts`parameter and finished at the day of the request or later, you will get it.
-Status indicates more fine information why the apartment is not available. I'm not sure you need this now, but here the list of statuses you are able to get in case of:
+Status indicates more fine information why the apartment is not available. 
+Here the list of statuses returned for a booking:
 * 4, means apartment in hold. 
 * 5, means apartment booking for the given period has been confirmed.
 * 6, means apartment has been fully booked.

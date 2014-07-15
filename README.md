@@ -527,7 +527,7 @@ This array is composed of period with a rate. This indicates the rate applied to
 
 This array is the price you can get for each different stay duration by all the season weights.
 
-You can use the parameter called `net` to select between net prices or retail prices. If the `net` parameter is 1, price are net, if the parameter equals 0, the prices included your margin.
+You can use the parameter called `net` to select between net prices or retail prices. If the `net` parameter is equal to 1, prices are net. If the parameter is equal to 0, the prices included your margin.
 This parameter is optional and by default the method returns net prices.
 
 Example:

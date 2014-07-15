@@ -734,6 +734,7 @@ This function checks the price and the availability of the apartment between two
 Required parameters:
 * start_date, The start date of your period to check, in YYYY-mm-dd format (i.e. 2014-08-01)
 * end_date, The end date of you period to check, in YYYY-mm-dd format (i.e. 2014-08-01)
+
 Optional parameter:
 * net, A boolean which indicate to the method if it must return net prices or prices with your margin. By default the method returns net prices.
 

@@ -527,6 +527,8 @@ This array is composed of period with a rate. This indicates the rate applied to
 
 This array is the price you can get for each different stay duration by all the season weights.
 
+You can use the parameter called `net` to select between net prices or retail prices. If the `net` parameter is 1, price are net, if the parameter equals 0, the prices included your margin.
+This parameter is optional and by default the method returns net prices.
 
 Example:
 
@@ -732,6 +734,8 @@ This function checks the price and the availability of the apartment between two
 Required parameters:
 * start_date, The start date of your period to check, in YYYY-mm-dd format (i.e. 2014-08-01)
 * end_date, The end date of you period to check, in YYYY-mm-dd format (i.e. 2014-08-01)
+Optional parameter:
+* net, A boolean which indicate to the method if it must return net prices or prices with your margin. By default the method returns net prices.
 
 The method returns the price in cents in the apartment currency and the availability.
 The availability field is a boolean where true means the apartment is available for booking between your dates, false means is not available.

@@ -314,6 +314,8 @@ When you provide a list of IDs you mustn't set the ID in the URL. The result is 
 If a flat has been de-activated or deleted, the response won't have it.
 If you are not authorized to use this apartment, the request failed with the appropriate error message and related flat ID.
 
+> If a blocked period is due to your booking, you will get its ID on the field called: booking_id.
+
 ##### Example #1
 
 ```html
@@ -347,7 +349,8 @@ Result:
     {
         status: "6",
         checkin_date: "2014-04-15",
-        checkout_date: "2014-04-22"
+        checkout_date: "2014-04-22",
+        booking_id: "123456"
     }
 ]
 ```
@@ -375,7 +378,8 @@ Result:
     {
         status: "6",
         checkin_date: "2013-11-27",
-        checkout_date: "2013-12-04"
+        checkout_date: "2013-12-04",
+        booking_id: "123456"
     },
     {
         status: "6",

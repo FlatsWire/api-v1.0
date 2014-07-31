@@ -655,9 +655,9 @@ Result:
 To get the final price, you must implement the following calculations:
 
 ```shell
-            (Dtot - Dci)          
-P = SUM  ----------------- x Pci
-                Dtot 
+            Dci          
+P = SUM  --------- x Pci
+            Dtot 
 ```
 
 Where: 

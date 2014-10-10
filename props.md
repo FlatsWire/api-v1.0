@@ -1,4 +1,4 @@
-** This is a new feature not yet deployed on the production server **
+**This is a new feature not yet deployed on the production server**
 
 #### Booking Update
 

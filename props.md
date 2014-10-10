@@ -97,20 +97,21 @@ There is no type for a property. All is text value. If the property except to be
 
 ###### Arrival information
 
+
 |ID|Name|Description|Restrictions|
-|---|------------------------|--|-|
-|43		|bkg.arr.date|Arrival date<br/>(may be different from the actual booking arrival date)|
-|150	|bkg.arr.flight.arr_date|Arrival date at destination of the arrival flight|
-|146	|bkg.arr.flight.arr_time|Arrival time at destination of the arrival flight|
-|149	|bkg.arr.flight.dep_date|Departure date of the flight from origin|
-|145	|bkg.arr.flight.dep_time|Departure time of the flight from origin|
-|41		|bkg.arr.flight.from|Airport origin of the arrival flight|
-|40		|bkg.arr.flight.number|Arrival flight number|2 letters airline IATA code and up to 4 digits, i.e.: AF0007, EK1|
-|44		|bkg.arr.location|Location of arrival for the transport (airport, train station, etc.)|
-|69		|bkg.arr.taxi.persons|Number of persons for the taxi|
-|59		|bkg.arr.taxi.requested|Tells whether customers resquested a taxi upon the arrival|1=taxi requested, 0=taxi not requested|
-|42		|bkg.arr.time|Time of arrival|
-|138	|bkg.arr.transport|Type of transport used|Available values:| 
+|--|----|-----------|------------|
+|43  |bkg.arr.date|Arrival date<br/>(may be different from the actual booking arrival date)||
+|150 |bkg.arr.flight.arr_date|Arrival date at destination of the arrival flight||
+|146 |bkg.arr.flight.arr_time|Arrival time at destination of the arrival flight||
+|149 |bkg.arr.flight.dep_date|Departure date of the flight from origin|
+|145 |bkg.arr.flight.dep_time|Departure time of the flight from origin|
+|41  |bkg.arr.flight.from|Airport origin of the arrival flight|
+|40  |bkg.arr.flight.number|Arrival flight number|2 letters airline IATA code and up to 4 digits, i.e.: AF0007, EK1|
+|44  |bkg.arr.location|Location of arrival for the transport (airport, train station, etc.)|
+|69  |bkg.arr.taxi.persons|Number of persons for the taxi|
+|59  |bkg.arr.taxi.requested|Tells whether customers resquested a taxi upon the arrival|1=taxi requested, 0=taxi not requested|
+|42  |bkg.arr.time|Time of arrival|
+|138 |bkg.arr.transport|Type of transport used|Available values:| 
 
 ###### Departure information
 

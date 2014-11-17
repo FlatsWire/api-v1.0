@@ -303,12 +303,12 @@ Result:
 Note: Photos storage has been changed and you need to change your implementation to follow the new way described in this method.
 
 This method returns all media available for this accomodation. The result is composed of a list of media object with the following fields:
-- media_id is the internal ID
-- url is the URL from where you can get the media
-- creadtion_date is the date of the first upload on the server
-- modification_date is the date of last modification, which can be a new upload or a text change
-- deletion_date is the date of deletion from the server of this media.
-- text is a text to describe the media. By default this field gets the file name of the uploaded media
+- `media_id` is the internal ID
+- `url` is the URL from where you can get the media
+- `creadtion_date` is the date of the first upload on the server
+- `modification_date` is the date of last modification, which can be a new upload or a text change
+- `deletion_date` is the date of deletion from the server of this media.
+- `text` is a text to describe the media. By default this field gets the file name of the uploaded media
 
 The 
 Example:

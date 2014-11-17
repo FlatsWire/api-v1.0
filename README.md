@@ -14,6 +14,7 @@ This FlatsWire API allow you to connect to us from your own system.
             * [Flat Get](#flat-get)
             * [Flat Description](#flat-description)
             * [Flat Photos](#flat-photos)
+            * [Flat Media](#flat-media)
             * [Flat Availability](#flat-availability)
             * [Flat References](#flat-references)
             * [Flat Prices](#flat-prices)

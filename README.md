@@ -217,6 +217,8 @@ Result:
 
 #### Flat Photos
 
+**Deprecated**: You must use now flat/media. This method is still working but only for accomodation added into FlatsWire up to June 2014. After this date, you'll get an empty list as result.
+
 This function gives you all the URLs of all photos available for an apartment.
 
 Example:
@@ -293,6 +295,49 @@ Result:
         "http://s3.amazonaws.com/bee-static/france/paris/A-VIEW99/larges/60.jpg"
     ]
 }
+```
+
+#### Flat Medias
+
+Note: Photos storage has been changed and you need to change your implementation to follow the new way described in this method.
+
+This method returns all media available for this accomodation. The result is composed of a list of media object with the following fields:
+- media_id is the internal ID
+- url is the URL from where you can get the media
+- creadtion_date is the date of the first upload on the server
+- modification_date is the date of last modification, which can be a new upload or a text change
+- deletion_date is the date of deletion from the server of this media.
+- text is a text to describe the media. By default this field gets the file name of the uploaded media
+
+The 
+Example:
+
+```html
+    http://<host>/rest/flat/media/1353?key=<your_key>
+```
+
+Result:
+
+```javascript
+[
+	{
+		media_id: "30266",
+		url: "http://flatswire.s3.amazonaws.com/items/1353/larges/30266.jpg",
+		creation_date: "2014-10-25 05:47:23",
+		modification_date: "2014-10-25 05:47:23",
+		deletion_date: null,
+		text: "1-AMBROISE-sl3.jpg"
+	},
+	...
+	{
+		media_id: "30284",
+		url: "http://flatswire.s3.amazonaws.com/items/1353/larges/30284.jpg",
+		creation_date: "2014-10-25 05:49:08",
+		modification_date: "2014-10-25 05:49:08",
+		deletion_date: null,
+		text: "21-AMBROISE-cz4.jpg"
+	}
+]
 ```
 
 #### Flat Availability

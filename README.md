@@ -792,6 +792,7 @@ Optional parameter:
 
 The method returns the price in cents in the apartment currency and the availability.
 The availability field is a boolean where true means the apartment is available for booking between your dates, false means is not available.
+The `deposit` field is the amount required to pay to secure the accomodation.
 
 Example:
 
@@ -805,6 +806,7 @@ Result:
 {
   price: 121000,
   available: false,
+  deposit: 50600,
   currency: "EUR"
 }
 ```
@@ -886,7 +888,42 @@ Result:
                "modification_date": "2014-06-02 17:20:43",
                "partner_reference": "REPUB06"
            }
-       }
+       },
+       payments: [
+		{
+			payment_id: "408650",
+			from_id: null,
+			to_id: false,
+			user_id: null,
+			customer_id: "54168",
+			account_id: null,
+			link_id: null,
+			category: "CUSTOMER",
+			code: "DEPOSIT",
+			mode: "1",
+			amount: "84000",
+			currency: "EUR",
+			currency_symbol: "&euro;",
+			payment_date: "2014-06-27 05:08:55",
+			creation_date: "2014-06-26 17:24:30",
+			modification_date: "2014-06-27 05:08:55",
+			deletion_date: null,
+			deleted: "0",
+			enabled: "1",
+			designation: "Deposit",
+			booking_id: "104240",
+			status: "2",
+			due_date: "2014-06-26",
+			service_id: null,
+			item_id: null,
+			event_id: null
+		},
+		{},
+		{},
+		{},
+		{},
+		{}
+	]	
     }
 ```
 

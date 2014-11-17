@@ -298,7 +298,7 @@ Result:
 }
 ```
 
-#### Flat Medias
+#### Flat Media
 
 Note: Photos storage has been changed and you need to change your implementation to follow the new way described in this method.
 

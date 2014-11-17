@@ -22,6 +22,8 @@ This FlatsWire API allow you to connect to us from your own system.
             * [Booking Get](#booking-get)
             * [Booking Push](#booking-push)
             * [Booking Update Status](#booking-update-status)
+        * [Customer](#customer)
+            * [Customer Get](#customer-get)
         * [Util](#utils)
 
 
@@ -1008,6 +1010,55 @@ Result:
     }
 
 ```
+
+### Customer
+
+#### Customer Get
+
+This function will return you a customer record.
+
+Example:
+
+```html
+    http://<host>/rest/customer/get/<customer_id>?key=<your_key>
+```
+
+Result:
+
+  The result will return customer information and all the bookings he did on the platform.
+
+```javascript
+{
+	customer_id: "55102",
+	first_name: "John",
+	mid_name: null,
+	last_name: "Doe",
+	email: "john.doe@somewhere.net",
+	address_id: null,
+	creation_date: "2014-07-21 15:34:34",
+	modification_date: "2014-07-21 15:34:34",
+	uuid: null,
+	bookings: [
+		{
+		booking_id: "105940",
+		reference: "ZRCILPUI",
+		status: "8",
+		checkin_date: "2014-09-06",
+		checkout_date: "2014-09-13",
+		creation_date: "2014-07-21 15:34:34",
+		modification_date: "2014-07-21 15:35:27",
+		adults: "2",
+		children: "0",
+		comments: "test",
+		duration: "7",
+		sleeps: "0",
+		infants: "0"
+		}
+	]
+}
+```
+
+
 
 ### Util
 

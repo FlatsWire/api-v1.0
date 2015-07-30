@@ -45,7 +45,7 @@ Result:
   "notes": null,
   "valid": "1"
 }
-```javascript
+```
 
 ## Checkin
 

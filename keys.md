@@ -49,7 +49,7 @@ Result:
 
 ## Checkin
 
-This methods is used to tell the system the position (geo location) of a key.
+This methods is used to tell the system the position (geo location) of a key or which action an agent performed.
 
 ```html
     POST http://<host>/rest/keys/checkin/<item_id>/<sequence_id>?key=<your_key>

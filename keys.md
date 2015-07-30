@@ -2,7 +2,7 @@
 
 This domain allows to manage accommodation keys in Beethoven.
 
-## Table of Contents
+## List of methods
 
 * [Get](#get)
 * [Checkin](#checkin)

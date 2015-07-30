@@ -101,6 +101,6 @@ Result:
   "user_id": "486",
   "checkin_date": "2015-07-30 10:24:03"
 }
-```javascript
+```
 
 

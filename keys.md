@@ -1,11 +1,11 @@
-# FlatsWire API - User
+# FlatsWire API - Keys
 
-This domain allows to manage keys in Beethoven.
+This domain allows to manage accommodation keys in Beethoven.
 
 ## Table of Contents
 
 * [Get](#get)
-* [Checkin](#get)
+* [Checkin](#checkin)
 
 ## Get
 
@@ -69,6 +69,7 @@ The required Post data are:
 - user_id: The user ID who is performing the checkin
 
 The methods returns a checkin object:
+
 - id: The ID of the inserted checkin
 - flat_id: The id of the accommodation (same as item_id)
 - sequence: The sequence of the key

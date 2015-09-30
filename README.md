@@ -23,6 +23,7 @@ This FlatsWire API allow you to connect to us from your own system.
             * [Booking Get](#booking-get)
             * [Booking Push](#booking-push)
             * [Booking Update Status](#booking-update-status)
+            * [Booking All](#booking-all)
         * [Customer](#customer)
             * [Customer Get](#customer-get)
         * [Account](#account)
@@ -1092,6 +1093,53 @@ Result:
        }
     }
 
+```
+
+#### Booking All
+
+This function will return all bookings modified from a specified date.
+
+The `date` parameter is required. The date as to be a Y-m-d date format. Example: 2015-09-01.
+
+The result is an array composed of 2 fields:
+- `count` which is the total number of bookings.
+- `bookings` which is the list of bookings
+
+The booking list has a maximum of 1000 entries. If the `count` is greater than 1000, this means you have to call this method with the extra parameter `page`. The number of pages available is `count` MOD 1000.
+
+Example:
+
+```html
+    http://<host>/rest/booking/all/<date>?key=<your_key>
+```
+
+Result:
+
+```javascript
+{
+  "count": 464,
+  "bookings": [
+    {
+      "booking_id": "181964",
+      "reference": "AZZZERTT",
+      "checkin_date": "2015-11-27",
+      "checkout_date": "2015-12-03",
+      "status": "6",
+      "creation_date": "2015-07-10 07:05:39",
+      "modification_date": "2015-09-01 06:46:15"
+    },
+    ...
+    {
+      "booking_id": "195070",
+      "reference": "ABCDEFGH",
+      "checkin_date": "2015-12-06",
+      "checkout_date": "2015-12-11",
+      "status": "8",
+      "creation_date": "2015-09-23 16:50:05",
+      "modification_date": "2015-09-23 18:55:52"
+    }
+  ]
+}
 ```
 
 ### Customer

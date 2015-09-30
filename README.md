@@ -508,10 +508,17 @@ Result:
 ```
 #### Flat References
 
-This function will return the full active list of apartments available for your account. The result is an array composed of:
-* `id`, ID of the apartment
-* `reference`, your reference if you set it in our system (via the back-office)
-* `manager_reference`, the reference used by the manager of this apartment.
+This function will return the full active list of apartments available for your account. 
+
+This method takes an optional parameter `date`. The format has to be in Y-m-d. Example: 2015-09-01.
+If this parameter is provided. The method will return only accommodations created or modified from this date.
+
+The result is an array composed of:
+* `id`, ID of the accommodation.
+* `reference`, your reference if you set it in our system (via the back-office).
+* `manager_reference`, the reference used by the manager of this accommodation.
+* `creation_date`, The date of creation of the accommodation.
+* `modification_date`, The last date of modification of the accommodation.
 
 If you didn't manage to rename on our system apartments, reference will be the same as the manager reference.
 
@@ -528,38 +535,17 @@ Result:
     {
         id: "5",
         reference: "ALBERT1",
-        manager_reference: "ALBERT1"
-    },
-    {
-        id: "8",
-        reference: "ALGER3",
-        manager_reference: "ALGER3"
-    },
-    {
-        id: "10",
-        reference: "AMEL108",
-        manager_reference: "AMEL108"
-    },
-    {
-        id: "17",
-        reference: "ASSAS",
-        manager_reference: "ASSAS"
+        manager_reference: "ALBERT1",
+    	creation_date: "2014-08-19 12:22:55",
+    	modification_date: "2015-09-01 11:12:56"
     },
     ...
     {
-        id: "997",
-        reference: "ARANCIOS",
-        manager_reference: "ARANCIOS"
-    },
-    {
-        id: "1000",
-        reference: "AMARIA",
-        manager_reference: "AMARIA"
-    },
-    {
         id: "1002",
         reference: "APSARA",
-        manager_reference: "APSARA"
+        manager_reference: "APSARA",
+    	creation_date: "2013-09-24 16:07:34",
+    	modification_date: "2015-09-02 18:44:47"
     }
 ]
 ```

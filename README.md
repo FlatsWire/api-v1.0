@@ -27,7 +27,7 @@ This FlatsWire API allow you to connect to us from your own system.
         * [Customer](#customer)
             * [Customer Get](#customer-get)
         * [Account](#account)
-
+       	    * [Account Managers] (#account-managers)
 
 ## General
 

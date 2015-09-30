@@ -25,7 +25,7 @@ This FlatsWire API allow you to connect to us from your own system.
             * [Booking Update Status](#booking-update-status)
         * [Customer](#customer)
             * [Customer Get](#customer-get)
-        * [Util](#utils)
+        * [Account](#account)
 
 
 ## General
@@ -1141,11 +1141,39 @@ Result:
 }
 ```
 
+### Account
 
+#### Managers
 
-### Util
+This function will return all manager you are connected to. This function is only available if your are an account of type of "Partner".
 
+Example:
+
+```html
+    http://<host>/rest/account/managers?key=<your_key>
 ```
-    Not yet avaialble
+
+Result:
+
+  The result will return the list of manager with contact information, like his name and his email address.
+
+```javascript
+[
+  {
+    "account_id": "1298",
+    "reference": "Manager A",
+    "creation_date": "2010-04-29 14:00:39",
+    "modification_date": "2015-09-22 12:14:07",
+    "contact_email": "contact@managera.com"
+  },
+  ...
+  {
+    "account_id": "2345",
+    "reference": "ManagerF",
+    "creation_date": "2015-09-25 15:49:38",
+    "modification_date": "2015-09-25 16:51:58",
+    "contact_email": "contact@managerf.com"
+  }
+]
 ```
 

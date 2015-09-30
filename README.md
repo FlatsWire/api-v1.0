@@ -1103,9 +1103,9 @@ The `date` parameter is required. The date as to be a Y-m-d date format. Example
 
 The result is an array composed of 2 fields:
 - `count` which is the total number of bookings.
-- `bookings` which is the list of bookings
+- `bookings` which is the list of bookings.
 
-The booking list has a maximum of 1000 entries. If the `count` is greater than 1000, this means you have to call this method with the extra parameter `page`. The number of pages available is `count` MOD 1000.
+The booking list has a maximum of 1000 entries. If the `count` is greater than 1000, this means you have to call this method with the extra parameter `page`. The number of pages available is `count` DIV 1000.
 
 Example:
 

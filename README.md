@@ -1177,7 +1177,7 @@ Result:
 
 ### Account
 
-#### Managers
+#### Account Managers
 
 This function will return all manager you are connected to. This function is only available if your are an account of type of "Partner".
 

@@ -19,6 +19,8 @@ This FlatsWire API allow you to connect to us from your own system.
             * [Flat References](#flat-references)
             * [Flat Prices](#flat-prices)
             * [Flat Check](#flat-check)
+            * [Flat Push](#flat-push)
+            * [Flat Update](#flat-update)
         * [Booking](#booking)
             * [Booking Get](#booking-get)
             * [Booking Push](#booking-push)
@@ -795,6 +797,345 @@ Result:
   available: false,
   deposit: 50600,
   currency: "EUR"
+}
+```
+
+#### Flat Push
+
+This function creates a new accommodation.
+
+Required parameters:
+* reference, The unique reference for the accommodation.
+* end_date, The end date of you period to check, in YYYY-mm-dd format (i.e. 2014-08-01).
+* item_type, The type of the accommodation (Flat, Villa, Riad, House, Hostel, Hotel, Castle, Boat, Room, Bungalow, Condo).
+* owner/first_name, The first name of the owner.
+* owner/last_name, The last name of the owner.
+* owner/email, The email of the owner.
+* address/zip_code, The zip code of the accommodation.
+* address/city, The city of the accommodation.
+* address/country, The country of the accommodation.
+* address/formatted_address, The formatted address of the accommodation.
+* currency, The currency code to price the accommodation.
+* district, The district in which is located the accommodation.
+* nb_room, The number of rooms.
+
+Optional parameter:
+* type, The category of the accommodation (Building, Category or Flat (default)).
+* parent_id, The id of the linked accommodation.
+* creation_date, The creation date of the accommodation.
+* external_id, The reference or id of the accommodation in your system.
+* owner/phone, The phone number of the owner.
+* owner/login, The login of the owner.
+* owner/password, The password of the owner.
+* owner/external_id, The id of the owner in your system.
+* owner/iban, The IBAN of the owner.
+* owner/bic, The BIC code of the owner.
+* owner/use_iban, If the owner use SEPA for transfer.
+* address/number, The number of the street of the accommodation.
+* address/street1, The first part of the address.
+* address/street2, The second part of the address.
+* address/street3, The third part of the address.
+* address/state, The state of the accommodation.
+* address/longitude, The longitude of the accommodation.
+* address/latitude, The latitude of the accommodation.
+* min_stay, The minimum duration for a booking.
+* max_stay, The maximum duration for a booking.
+* nb_single_bed, The number of single beds.
+* nb_double_bed, The number of double beds.
+* nb_sofabed_1pers, The number of 1 person sofabeds.
+* nb_sofabed_2pers, The number of 2 persons sofabeds.
+* nb_sofabed_3pers, The number of 3 persons sofabeds.
+* nb_bedroom, The number of bedrooms.
+* nb_bathroom, The number of bathrooms.
+* nb_separated_toilets, The number of separated toilets.
+* nb_stories, The number of stories in the accommodation.
+* floor, The floor on which the accommodation is located.
+* american_floor_numbering, If the ground 0 is skipped in the numbering.
+* note, Notes about the accommodation.
+* code1, The first code of the accommodation.
+* code2, The second code of the accommodation.
+* phone, The phone number of the accommodation.
+* wifi_ssid, The wifi name.
+* wifi_password, The password of the wifi.
+* virtual_tour, The link of a virtual tour.
+* area, The area of the accommodation.
+* area_in_sqm, If the area is mesured in square meters.
+* iban, The IBAN of the accommodation.
+* bic, The BIC code of the accommodation.
+* amenities, A list of amenities.
+* texts, A list of description of the accommodation.
+
+
+
+The method returns a list of messages showing if the accommodations have been created, or the error messages if some could not be created.
+
+Example:
+
+```html
+    http://<host>/rest/flat/push?key=<your_key>
+```
+```javascript
+[{		
+        "reference":"TOTO",		
+        "type":"",	
+        "parent_id",
+        "item_type":"Flat",		
+        "creation_date":"2017-02-15",		
+        "external_id":"TOTO1234",		
+        "owner":{		
+            "first_name":"John",		
+            "last_name":"Doe",		
+            "email":"john@doe.com",		
+            "phone":"+123456789",		
+            "login":"johndoe",		
+            "password":"password",		
+            "external_id":"JohnDoe123",		
+            "iban":"12345678949654656",		
+            "bic":"AA123BB",		
+            "use_iban":"1"		
+        },		
+        "address":{		
+            "number":"1",		
+            "street1":"rue de paris",		
+            "street2":"batiment A",		
+            "street3":"3è étage",		
+            "zip_code":"75001",		
+            "state":"Ile De France",		
+            "city":"Paris",		
+            "country":"France",		
+            "longitude":"2",		
+            "latitude":"35",		
+            "formatted_address":"1 rue de paris, 75001, Paris"		
+        },		
+        "min_stay":"3",		
+        "max_stay":"365",		
+        "nb_single_bed":"2",		
+        "nb_double_bed":"1",		
+        "nb_sofabed_1pers":"0",		
+        "nb_sofabed_2pers":"0",		
+        "nb_sofabed_3pers":"2",		
+        "nb_bedrooms":"2",		
+        "nb_bathrooms":"1",		
+        "nb_separated_toilets":"1",		
+        "currency":"EUR",		
+        "nb_stories":"1",		
+        "floor":"4",		
+        "american_floor_numbering":"0",		
+        "note":"some stuff about the accommodation",		
+        "district":"Chatelet",		
+        "code1":"1234",		
+        "code2":"9876",		
+        "phone":"+123456789",		
+        "wifi_ssid":"toto_ssid",		
+        "wifi_password":"password",		
+        "nb_room":"4",		
+        "virtual_tour":"http://somelink.com/virtualtour",		
+        "area":"80",		
+        "area_in_sqm":"0",		
+        "iban":"16887743489468",		
+        "bic":"CC546GG",		
+        "amenities":{		
+            "flat_wifi":"1",		
+            "flat_pool":"0"		
+        },		
+        "texts":{		
+            "fr":{		
+                "description":"Une description longue de l'appartement",		
+                "short_description":"une description rapide"		
+            }			
+            "en":{		
+                "description":"A really long description of the accommodation",		
+                "short_description":"a short description"		
+            }		
+        }		
+    }]
+```
+
+Result:
+
+```javascript
+{
+  "errors": [],
+  "warnings": {
+    "TOTO": [
+      "No item type was provided, flat assumed."
+    ]
+  },
+  "success": {
+    "TOTO": [
+      "The accommodation TOTO has been created."
+    ]
+  }
+}
+```
+
+#### Flat Update
+
+This function updates an accommodation.
+
+Required parameters:
+* flat_id, The id of the accommodation in our system.
+* reference, The unique reference for the accommodation.
+* end_date, The end date of you period to check, in YYYY-mm-dd format (i.e. 2014-08-01).
+* item_type, The type of the accommodation (Flat, Villa, Riad, House, Hostel, Hotel, Castle, Boat, Room, Bungalow, Condo).
+* owner/first_name, The first name of the owner.
+* owner/last_name, The last name of the owner.
+* owner/email, The email of the owner.
+* address/zip_code, The zip code of the accommodation.
+* address/city, The city of the accommodation.
+* address/country, The country of the accommodation.
+* address/formatted_address, The formatted address of the accommodation.
+* currency, The currency code to price the accommodation.
+* district, The district in which is located the accommodation.
+* nb_room, The number of rooms.
+
+Optional parameter:
+* type, The category of the accommodation (Building, Category or Flat (default)).
+* parent_id, The id of the linked accommodation.
+* creation_date, The creation date of the accommodation.
+* external_id, The reference or id of the accommodation in your system.
+* owner/phone, The phone number of the owner.
+* owner/login, The login of the owner.
+* owner/password, The password of the owner.
+* owner/external_id, The id of the owner in your system.
+* owner/iban, The IBAN of the owner.
+* owner/bic, The BIC code of the owner.
+* owner/use_iban, If the owner use SEPA for transfer.
+* address/number, The number of the street of the accommodation.
+* address/street1, The first part of the address.
+* address/street2, The second part of the address.
+* address/street3, The third part of the address.
+* address/state, The state of the accommodation.
+* address/longitude, The longitude of the accommodation.
+* address/latitude, The latitude of the accommodation.
+* min_stay, The minimum duration for a booking.
+* max_stay, The maximum duration for a booking.
+* nb_single_bed, The number of single beds.
+* nb_double_bed, The number of double beds.
+* nb_sofabed_1pers, The number of 1 person sofabeds.
+* nb_sofabed_2pers, The number of 2 persons sofabeds.
+* nb_sofabed_3pers, The number of 3 persons sofabeds.
+* nb_bedroom, The number of bedrooms.
+* nb_bathroom, The number of bathrooms.
+* nb_separated_toilets, The number of separated toilets.
+* nb_stories, The number of stories in the accommodation.
+* floor, The floor on which the accommodation is located.
+* american_floor_numbering, If the ground 0 is skipped in the numbering.
+* note, Notes about the accommodation.
+* code1, The first code of the accommodation.
+* code2, The second code of the accommodation.
+* phone, The phone number of the accommodation.
+* wifi_ssid, The wifi name.
+* wifi_password, The password of the wifi.
+* virtual_tour, The link of a virtual tour.
+* area, The area of the accommodation.
+* area_in_sqm, If the area is mesured in square meters.
+* iban, The IBAN of the accommodation.
+* bic, The BIC code of the accommodation.
+* amenities, A list of amenities.
+* texts, A list of description of the accommodation.
+
+
+
+The method returns a list of messages showing if the accommodations have been created, or the error messages if some could not be created.
+
+Example:
+
+```html
+    http://<host>/rest/flat/push?key=<your_key>
+```
+```javascript
+[{		
+        "reference":"TOTO",		
+        "type":"",	
+        "parent_id",
+        "item_type":"Flat",		
+        "creation_date":"2017-02-15",		
+        "external_id":"TOTO1234",		
+        "owner":{		
+            "first_name":"John",		
+            "last_name":"Doe",		
+            "email":"john@doe.com",		
+            "phone":"+123456789",		
+            "login":"johndoe",		
+            "password":"password",		
+            "external_id":"JohnDoe123",		
+            "iban":"12345678949654656",		
+            "bic":"AA123BB",		
+            "use_iban":"1"		
+        },		
+        "address":{		
+            "number":"1",		
+            "street1":"rue de paris",		
+            "street2":"batiment A",		
+            "street3":"3è étage",		
+            "zip_code":"75001",		
+            "state":"Ile De France",		
+            "city":"Paris",		
+            "country":"France",		
+            "longitude":"2",		
+            "latitude":"35",		
+            "formatted_address":"1 rue de paris, 75001, Paris"		
+        },		
+        "min_stay":"3",		
+        "max_stay":"365",		
+        "nb_single_bed":"2",		
+        "nb_double_bed":"1",		
+        "nb_sofabed_1pers":"0",		
+        "nb_sofabed_2pers":"0",		
+        "nb_sofabed_3pers":"2",		
+        "nb_bedrooms":"2",		
+        "nb_bathrooms":"1",		
+        "nb_separated_toilets":"1",		
+        "currency":"EUR",		
+        "nb_stories":"1",		
+        "floor":"4",		
+        "american_floor_numbering":"0",		
+        "note":"some stuff about the accommodation",		
+        "district":"Chatelet",		
+        "code1":"1234",		
+        "code2":"9876",		
+        "phone":"+123456789",		
+        "wifi_ssid":"toto_ssid",		
+        "wifi_password":"password",		
+        "nb_room":"4",		
+        "virtual_tour":"http://somelink.com/virtualtour",		
+        "area":"80",		
+        "area_in_sqm":"0",		
+        "iban":"16887743489468",		
+        "bic":"CC546GG",		
+        "amenities":{		
+            "flat_wifi":"1",		
+            "flat_pool":"0"		
+        },		
+        "texts":{		
+            "fr":{		
+                "description":"Une description longue de l'appartement",		
+                "short_description":"une description rapide"		
+            }			
+            "en":{		
+                "description":"A really long description of the accommodation",		
+                "short_description":"a short description"		
+            }		
+        }		
+    }]
+```
+
+Result:
+
+```javascript
+{
+  "errors": [],
+  "warnings": {
+    "TOTO": [
+      "No item type was provided, flat assumed."
+    ]
+  },
+  "success": {
+    "TOTO": [
+      "The accommodation TOTO has been created."
+    ]
+  }
 }
 ```
 

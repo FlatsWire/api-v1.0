@@ -819,7 +819,7 @@ Required parameters:
 * district, The district in which is located the accommodation.
 * nb_room, The number of rooms.
 
-Optional parameter:
+Optional parameters:
 * type, The category of the accommodation (Building, Category or Flat (default)).
 * parent_id, The id of the linked accommodation.
 * creation_date, The creation date of the accommodation.
@@ -864,6 +864,12 @@ Optional parameter:
 * bic, The BIC code of the accommodation.
 * amenities, A list of amenities.
 * texts, A list of description of the accommodation.
+* create_event_checkin, Creates a checkin event in the agenda when a booking is made.
+* create_event_checkout, Creates a checkout event in the agenda when a booking is made.
+* create_event_cleaning, Creates a cleaning event in the agenda when a booking is made.
+* inventory_at_checkin, Makes the apartment inventory required at checkin
+* inventory_at_checkout, Makes the apartment inventory required at checkout
+* inventory_at_cleaning, Makes the apartment inventory required at cleaning
 
 
 
@@ -1034,6 +1040,12 @@ Optional parameter:
 * bic, The BIC code of the accommodation.
 * amenities, A list of amenities.
 * texts, A list of description of the accommodation.
+* create_event_checkin, Creates a checkin event in the agenda when a booking is made.
+* create_event_checkout, Creates a checkout event in the agenda when a booking is made.
+* create_event_cleaning, Creates a cleaning event in the agenda when a booking is made.
+* inventory_at_checkin, Makes the apartment inventory required at checkin
+* inventory_at_checkout, Makes the apartment inventory required at checkout
+* inventory_at_cleaning, Makes the apartment inventory required at cleaning
 
 
 
@@ -1042,10 +1054,11 @@ The method returns a list of messages showing if the accommodations have been cr
 Example:
 
 ```html
-    http://<host>/rest/flat/push?key=<your_key>
+    http://<host>/rest/flat/update?key=<your_key>
 ```
 ```javascript
 [{		
+	"flat_id":123,
         "reference":"TOTO",		
         "type":"",	
         "parent_id",

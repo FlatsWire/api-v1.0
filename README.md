@@ -515,6 +515,24 @@ This function will return the full active list of apartments available for your 
 This method takes an optional parameter `date`. The format has to be in Y-m-d. Example: 2015-09-01.
 If this parameter is provided. The method will return only accommodations created or modified from this date.
 
+```html
+    http://<host>/rest/flat/references/<Y-m-d>?key=<your_key>
+```
+
+Two additionals parameters can be set:
+- manager, when set, result are filtered by manager. The value to set is an int which represents the ID of the manager.
+- enabled, when set, result are filtered by activated or desactivated or both status of accommodations. Values are :
+	+ all : returns activated and desactivated accommodations. This is the default value if not set;
+	+ 0: returns only desactivated accommodations;
+	+ 1: returns only activated accommodations.
+
+The following query returns all desactivated accommodations for the manager ID 41, since the 1st of June 2017:
+
+```html
+    http://<host>/rest/flat/references/2017-06-01?key=<your_key>&manager=41&enabled=0
+```
+
+
 The result is an array composed of:
 * `id`, ID of the accommodation.
 * `reference`, your reference if you set it in our system (via the back-office).

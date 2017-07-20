@@ -796,6 +796,11 @@ Required parameters:
 
 Optional parameter:
 * net, A boolean which indicate to the method if it must return net prices or prices with your margin. By default the method returns net prices.
+* adults, An integer which tell how many adults will be there for this booking
+* children, An integer which tell how many children will be there for this booking
+
+**Notice**
+> Parameters `adults` and `children` are required to get the correct amount of the city apply which may be applied for the booking
 
 The method returns the price in cents in the apartment currency and the availability.
 The availability field is a boolean where true means the apartment is available for booking between your dates, false means is not available.
@@ -811,10 +816,42 @@ Result:
 
 ```javascript
 {
-  price: 121000,
-  available: false,
-  deposit: 50600,
-  currency: "EUR"
+    "available": true,
+    "currency": "EUR",
+    "deposit": 15848,
+    "discounts": [],
+    "error": false,
+    "id": "4093",
+    "message": false,
+    "original_price": 50900,
+    "price": 52825,
+    "pricer": "V2",
+    "success": true,
+    "taxes": [
+        {
+            "amount": 1925,
+            "code": "Taxe de Séjour",
+            "conf": {
+                "perimeter": {
+                    "ids": [
+                        "3578",
+                        "3652"
+                    ],
+                    "type": "2"
+                },
+                "price": {
+                    "adult": "0.55",
+                    "child": "0.55",
+                    "max_stay": "999"
+                }
+            },
+            "currency": "EUR",
+            "name": "TOURIST_TAX",
+            "service_id": "213",
+            "service_type_id": "10"
+        }
+    ],
+    "total_price": 52825
 }
 ```
 

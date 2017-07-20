@@ -809,7 +809,7 @@ The `deposit` field is the amount required to pay to secure the accomodation.
 Example:
 
 ```html
-    http://<host>/rest/flat/check/595?key=<your_key>&start_date=2014-08-01&end_date=2014-08-07
+    http://<host>/rest/flat/check/4093?key=<your_key>&start_date=2017-08-05&end_date=2017-08-012&adults=1&children=4
 ```
 
 Result:

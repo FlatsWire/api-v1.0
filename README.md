@@ -571,12 +571,17 @@ Result:
 ```
 
 #### Flat Prices
+
 This function will return the matrix of prices for this apartment.
 The result is composed of two sections:
 * `season weights`
 * `prices`
 
 All prices are in the apartment currency.
+
+```html
+	http://<host>/rest/flat/prices/<accommodation_id>?key=<your_key>
+```
 
 * The season weights array
 

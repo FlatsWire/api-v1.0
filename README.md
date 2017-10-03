@@ -1231,6 +1231,7 @@ Result:
 
     {
        "booking_id": "101992",
+       "external_id": null,
        "reference": "EWASATHR",
        "status": "3",
        "checkin_date": "2014-05-01",
@@ -1244,9 +1245,31 @@ Result:
        "duration": "9",
        "sleeps": "0",
        "infants": "0",
+       "is_long_term": "0",
+       "selected_item_id": "595",
+       "channel_id": 6,
+       "channel": "FlatsWire",
+       "channel_com": 0,
+       "channel_booking_id":null,
+       "channel_item_id": null,
+       "channel_ignore": "0",
+       "airbnb_id": null,
+       "ha_id": null,
+       "ha_source": null,
+       "ha_source_url": null,
+       "order_id": 123456,
+       "ical_source": null,
+       "ical_event_uid": null,
+       "ical_event_description": null,
+       "ical_event_summary": null,
+       "reminder_counter": 1,
+       "inventory_required": 0,
+       "inventory_ko": 0,
        "customer":
        {
            "customer_id": "52510",
+	   "external_id": null,
+	   "gender": 0,
            "first_name": "John",
            "mid_name": null,
            "last_name": "Doe",
@@ -1255,9 +1278,23 @@ Result:
            "account_id": "36",
            "creation_date": "2014-06-03 11:59:16",
            "modification_date": "2014-06-03 11:59:16",
-           "uuid": null
+           "uuid": null,
+	   "number": null,
+	   "street1": null,
+	   "street2": null,
+	   "zip_code": null,
+	   "city": null,
+	   "country_id": 74,
+	   "latitude": 0,
+	   "longitude": 0,
        },
-       "properties": false,
+       "properties": [
+       		{
+			"property_id": 0,
+			"key: "property_key",
+			"value": "value"
+		}
+       ],
        "selected_item":
        {
            "total_price": "211200",
@@ -1266,6 +1303,8 @@ Result:
            "partner_split": "30",
            "partner_service": "0",
            "customer_service": "0",
+	   "customer_currency_rate": 1,
+	   "order_id": 123456,
            "item":
            {
                "flat_id": "595",
@@ -1277,17 +1316,23 @@ Result:
                "nb_sleep": "3",
                "nb_dbed": "2",
                "nb_sbed": "0",
+	       "nb_sofa1bed": 0,
                "nb_sofabed": "1",
+	       "nb_sofa3bed": 0,
                "nb_bedroom": "2",
                "nb_bathroom": "1",
                "nb_toilette": "1",
                "floor": "7",
+	       "nb_floor": "1",
+	       "area": 50,
+	       "area_is_metric": 1,
                "photo_count": "60",
                "enabled": "1",
                "reference": "A-VIEW99",
                "creation_date": "2011-03-18 11:24:13",
                "modification_date": "2014-06-02 17:20:43",
-               "partner_reference": "REPUB06"
+               "partner_reference": "REPUB06",
+	       "note": "something about the apartment"
            }
        },
        payments: [

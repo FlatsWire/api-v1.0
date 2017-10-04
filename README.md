@@ -912,8 +912,8 @@ Optional parameters:
 * floor, The floor on which the accommodation is located.
 * american_floor_numbering, If the ground 0 is skipped in the numbering.
 * note, Notes about the accommodation.
-* code1, The first code of the accommodation.
-* code2, The second code of the accommodation.
+* code_1, The first code of the accommodation.
+* code_2, The second code of the accommodation.
 * phone, The phone number of the accommodation.
 * wifi_ssid, The wifi name.
 * wifi_password, The password of the wifi.

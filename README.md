@@ -877,6 +877,7 @@ Required parameters:
 * address/formatted_address, The formatted address of the accommodation.
 * currency, The currency code to price the accommodation.
 * district, The district in which is located the accommodation.
+* city, The city name in which is located the accommodation.
 * nb_room, The number of rooms.
 
 Optional parameters:
